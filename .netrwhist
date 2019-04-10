@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/homes/iws/gerar231/cse391/hw2/Backwards.java'
+let g:netrw_dirhist_2='/homes/iws/gerar231/cse333/exercises/ex0'
+let g:netrw_dirhist_3='/homes/iws/gerar231/cse333'
+let g:netrw_dirhist_4='/homes/iws/gerar231/cse333/cse333-18au-gerar231/hw1/solution_binaries'
+let g:netrw_dirhist_5='/homes/iws/gerar231/cse333/cse333-18au-gerar231/hw3/solution_binaries'
+let g:netrw_dirhist_6='/homes/iws/gerar231/cse333/cse333-18au-gerar231/hw3/libhw1'
+let g:netrw_dirhist_7='/homes/iws/gerar231/cse344/cse344-gerar231/hw/hw7/submission'
+let g:netrw_dirhist_8='/homes/iws/gerar231/cse451/xk/kernel'
