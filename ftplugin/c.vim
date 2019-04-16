@@ -4,5 +4,4 @@ setlocal softtabstop=0
 setlocal expandtab
 setlocal autoindent
 setlocal smartindent
-set colorcolumn=80
-highlight ColorColumn ctermbg=DarkBlue
+match BadWhiteSpace /\s\+$/
