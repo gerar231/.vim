@@ -1,2 +1,4 @@
-bundle/ #location in .vim/bundle holds Vundler.vim
-plugins/ #location in .vim/plugins holds plugins
+#location in .vim/bundle holds Vundler.vim
+bundle/ 
+#location in .vim/plugins holds plugins
+plugins/
