@@ -35,6 +35,9 @@ filetype plugin indent on    " required
 " Enable syntax highlighting
 syntax on
 
+" set encoding for YouCompleteMe
+set encoding=utf-8
+
 " Global 80 character column
 " set colorcolumn=80
 " highlight ColorColumn ctermbg=DarkBlue
@@ -89,10 +92,10 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Staged"    : "+",
     \ "Untracked" : "!",
     \ "Renamed"   : "@",
-    \ "Unmerged"  : "═",
+    \ "Unmerged"  : "U",
     \ "Deleted"   : "X",
     \ "Dirty"     : "~",
-    \ "Clean"     : "O",
+    \ "Clean"     : "-",
     \ 'Ignored'   : '$',
     \ "Unknown"   : "?"
     \ }
