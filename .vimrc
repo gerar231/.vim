@@ -85,6 +85,9 @@ endif
 " Solarized toggle Dark/Light via f5
 call togglebg#map("<F5>")
 
+" Nerd Tree Key mapping
+map <C-n> :NERDTreeToggle<CR>
+
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "*",
     \ "Staged"    : "+",
