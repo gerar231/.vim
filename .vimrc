@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
-call vundle#begin('~/some/path/here')
+call vundle#begin('~/.vim/plugins')
 
 " " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -15,20 +15,29 @@ Plugin 'gmarik/Vundle.vim'
 " used Bundle instead of Plugin)
 
 " ...
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Enable syntax highlighting
-"syntax on
+syntax on
 
 " Global 80 character column
-set colorcolumn=80
-highlight ColorColumn ctermbg=DarkBlue
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=DarkBlue
 
 " Indentation settings for using 4 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
@@ -63,3 +72,27 @@ nnoremap <space> za
 
 " Enable docstrings for folded code
 let g:SimpylFold_docstring_preview=1
+
+" Solarized Config script
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme zenburn
+endif
+
+" Solarized toggle Dark/Light via f5
+call togglebg#map("<F5>")
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "*",
+    \ "Staged"    : "+",
+    \ "Untracked" : "!",
+    \ "Renamed"   : "@",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "X",
+    \ "Dirty"     : "~",
+    \ "Clean"     : "O",
+    \ 'Ignored'   : '$',
+    \ "Unknown"   : "?"
+    \ }

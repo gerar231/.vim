@@ -4,4 +4,3 @@ setlocal softtabstop=0
 setlocal expandtab
 setlocal autoindent
 setlocal smartindent
-match BadWhiteSpace /\s\+$/
