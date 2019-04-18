@@ -37,15 +37,15 @@ syntax on
 set encoding=utf-8
 
 " Global 80 character column
-" set colorcolumn=80
-" highlight ColorColumn ctermbg=DarkBlue
+set colorcolumn=80
+highlight ColorColumn ctermbg=LightGray
 
 " Indentation settings for using 4 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
-" set tabstop=4
-"set shiftwidth=4
-"set softtabstop=4
-"set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
 " Display line numbers on the left
 set number
@@ -58,12 +58,6 @@ set ruler
 set splitbelow
 set splitright
 
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -74,6 +68,8 @@ nnoremap <space> za
 " Enable docstrings for folded code
 let g:SimpylFold_docstring_preview=1
 
+"Use current background color to clear the screen
+set t_ut=
 " Solarized Config script
 if has('gui_running')
   set background=dark
