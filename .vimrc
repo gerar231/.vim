@@ -16,13 +16,42 @@ Plugin 'gmarik/Vundle.vim'
 
 " ...
 Plugin 'Valloric/YouCompleteMe'
+    " set encoding for YouCompleteMe
+    set encoding=utf-8
+    let g:ycm_confirm_extra_conf = 0 
+
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
+    " Enable folding
+    set foldmethod=indent
+    set foldlevel=99
+    " Enable folding with the spacebar
+    nnoremap <space> za
+    " Enable docstrings for folded code
+    let g:SimpylFold_docstring_preview=1
+
 Plugin 'vim-syntastic/syntastic'
+    let g:syntastic_python_checkers = ['pylint'] 
+
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
+    " Nerd Tree Key mapping
+    map <C-n> :NERDTreeToggle<CR>
+
+    let g:NERDTreeIndicatorMapCustom = {
+        \ "Modified"  : "*",
+        \ "Staged"    : "+",
+        \ "Untracked" : "!",
+        \ "Renamed"   : "@",
+        \ "Unmerged"  : "U",
+        \ "Deleted"   : "X",
+        \ "Dirty"     : "~",
+        \ "Clean"     : "-",
+        \ 'Ignored'   : '$',
+        \ "Unknown"   : "?"
+        \ }
+
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -32,10 +61,7 @@ filetype plugin indent on    " required
 
 " Enable syntax highlighting
 syntax on
-
-" set encoding for YouCompleteMe
-set encoding=utf-8
-
+ 
 " Global 80 character column
 set colorcolumn=80
 highlight ColorColumn ctermbg=LightGray
@@ -58,15 +84,6 @@ set ruler
 set splitbelow
 set splitright
 
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-" Enable folding with the spacebar
-nnoremap <space> za
-
-" Enable docstrings for folded code
-let g:SimpylFold_docstring_preview=1
 
 "Use current background color to clear the screen
 set t_ut=
@@ -81,18 +98,3 @@ endif
 " Solarized toggle Dark/Light via f5
 call togglebg#map("<F5>")
 
-" Nerd Tree Key mapping
-map <C-n> :NERDTreeToggle<CR>
-
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "*",
-    \ "Staged"    : "+",
-    \ "Untracked" : "!",
-    \ "Renamed"   : "@",
-    \ "Unmerged"  : "U",
-    \ "Deleted"   : "X",
-    \ "Dirty"     : "~",
-    \ "Clean"     : "-",
-    \ 'Ignored'   : '$',
-    \ "Unknown"   : "?"
-    \ }
