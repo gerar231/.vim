@@ -19,6 +19,7 @@ Plugin 'Valloric/YouCompleteMe'
     " set encoding for YouCompleteMe
     set encoding=utf-8
     let g:ycm_confirm_extra_conf = 0 
+    nnoremap <F1> :YcmCompleter GetDoc<CR>
 
 Plugin 'tmhedberg/SimpylFold'
     " Enable folding
@@ -98,3 +99,5 @@ endif
 " Solarized toggle Dark/Light via f5
 call togglebg#map("<F5>")
 
+"Remove all trailing whitespace by pressing F5
+nnoremap <F2> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
