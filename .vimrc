@@ -32,6 +32,7 @@ Plugin 'tmhedberg/SimpylFold'
 
 Plugin 'vim-syntastic/syntastic'
     let g:syntastic_python_checkers = ['pylint'] 
+    nnoremap <F3> :SyntasticCheck<CR>
     let g:syntastic_mode_map = {
             \ "mode": "passive",
             \ "active_filetypes": [],
