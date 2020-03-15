@@ -1,27 +1,15 @@
 set nocompatible              " required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" alternatively, pass a path where Vundle should install plugins
-call vundle#begin('~/.vim/plugins')
-
-" " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" add all your plugins here (note older versions of Vundle
-" used Bundle instead of Plugin)
-
-" ...
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
     " set encoding for YouCompleteMe
     set encoding=utf-8
     let g:ycm_confirm_extra_conf = 0 
     nnoremap <F1> :YcmCompleter GetDoc<CR>
 
-Plugin 'tmhedberg/SimpylFold'
+Plug 'tmhedberg/SimpylFold'
     " Enable folding
     set foldmethod=indent
     set foldlevel=99
@@ -30,7 +18,7 @@ Plugin 'tmhedberg/SimpylFold'
     " Enable docstrings for folded code
     let g:SimpylFold_docstring_preview=1
 
-Plugin 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
     let g:syntastic_python_checkers = ['pylint'] 
     nnoremap <F3> :SyntasticCheck<CR>
     let g:syntastic_mode_map = {
@@ -38,13 +26,9 @@ Plugin 'vim-syntastic/syntastic'
             \ "active_filetypes": [],
             \ "passive_filetypes": [] }
 
-Plugin 'nvie/vim-flake8'
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
     " Nerd Tree Key mapping
     map <C-n> :NERDTreeToggle<CR>
-
     let g:NERDTreeIndicatorMapCustom = {
         \ "Modified"  : "*",
         \ "Staged"    : "+",
@@ -58,11 +42,14 @@ Plugin 'scrooloose/nerdtree'
         \ "Unknown"   : "?"
         \ }
 
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'google/vim-colorscheme-primary'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+Plug 'rakr/vim-togglebg'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" Initialize plugin system
+call plug#end()
 filetype plugin indent on    " required
 
 " Enable syntax highlighting
@@ -86,23 +73,22 @@ set number
 " line of a window
 set ruler
 
-"default split direction
+" Default split direction
 set splitbelow
 set splitright
 
-
-"Use current background color to clear the screen
+" Use current background color to clear the screen
 set t_ut=
-" Solarized Config script
-if has('gui_running')
-  set background=dark
-  colorscheme solarized
-else
-  colorscheme zenburn
-endif
 
-" Solarized toggle Dark/Light via f5
+" Solarized Config script
+set t_Co=256 
+set background=dark
+colorscheme primary 
+
+
+
+" Toggle Dark/Light via f5
 call togglebg#map("<F5>")
 
-"Remove all trailing whitespace by pressing F5
+" Remove all trailing whitespace by pressing F5
 nnoremap <F2> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
