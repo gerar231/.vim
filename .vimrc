@@ -85,8 +85,6 @@ set t_Co=256
 set background=dark
 colorscheme primary 
 
-
-
 " Toggle Dark/Light via f5
 call togglebg#map("<F5>")
 
